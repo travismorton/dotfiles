@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/travismorton'
+let g:netrw_dirhist_2='/Users/travismorton/.Trash'
+let g:netrw_dirhist_3='/Users/travismorton/.Trash/Hammerspoon 2.app'
+let g:netrw_dirhist_4='/Users/travismorton/.Trash/Hammerspoon 2.app/Contents'
+let g:netrw_dirhist_5='/Users/travismorton'
+let g:netrw_dirhist_6='/Users/travismorton/.Trash'
+let g:netrw_dirhist_7='/Users/travismorton'
+let g:netrw_dirhist_8='/Users/travismorton/.vim/bundle/Vundle.vim'
