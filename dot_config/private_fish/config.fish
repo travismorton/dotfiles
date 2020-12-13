@@ -27,7 +27,8 @@ powerline-setup
 # set -Uxa LD_LIBRARY_PATH /opt/cudnn7-cuda10.2/lib/
 
 # set PATH
-# set -gx PATH $GOPATH/bin $PATH
+set -gx PATH $GOPATH/bin $PATH
+set -gx PATH ~/.bin $PATH
 # set -gx PATH ~/.gem/ruby/2.7.0/bin $PATH
 
 # start thefuck
