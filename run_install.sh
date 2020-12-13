@@ -8,7 +8,7 @@
 #####################
 # Powerline Install #
 #####################
-pip3 install --user powerline-status)
+pip3 install --user powerline-status
 
 USER_PATH=/home/travis/
 
