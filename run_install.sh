@@ -4,11 +4,7 @@
 #       neovim (needs to be built from source if on ubuntu)
 #       fish
 #       fzf
-
-#####################
-# Powerline Install #
-#####################
-pip3 install --user powerline-status
+#       powerline
 
 USER_PATH=/home/travis/
 
