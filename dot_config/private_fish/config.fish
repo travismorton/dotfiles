@@ -17,10 +17,11 @@ powerline-setup
 
 # env vars
 # set -x CUDA_HOME /opt/cuda
-# set -x EDITOR /usr/bin/nvim
+set -x EDITOR /usr/bin/nvim
 # set -x VIRTUAL_ENV_DISABLE_PROMPT true
 # set -x GOPATH /home/travis/go
-# set -x _JAVA_AWT_WM_NONREPARENTING 1
+set -x _JAVA_AWT_WM_NONREPARENTING 1
+set -x LC_ALL "en_US.UTF-8"
 
 # set LD_LIBRARY
 # needed for cudnn
