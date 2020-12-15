@@ -30,7 +30,14 @@ set -x LC_ALL "en_US.UTF-8"
 # set PATH
 set -gx PATH $GOPATH/bin $PATH
 set -gx PATH ~/.bin $PATH
+# set -gx PATH ~/workspace/conda/bin $PATH
 # set -gx PATH ~/.gem/ruby/2.7.0/bin $PATH
 
 # start thefuck
 # thefuck --alias | source
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/travis/workspace/conda/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
