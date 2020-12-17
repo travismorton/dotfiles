@@ -32,9 +32,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Theming
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'chriskempson/base16-vim'
 " Plug 'guns/xterm-color-table.vim'
 
 " Tools
@@ -42,6 +43,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'psf/black'
 
 " Autocompletion, linting, LSP, etc.
 " LSP requirements outside of neovim:
@@ -94,7 +96,7 @@ set updatetime=100
 " Required for operations modifying multiple buffers like rename.
 set hidden
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['/usr/bin/pyls'],
+    \ 'python': ['~/.local/share/nvim/venv/bin/pyls'],
     \ 'cpp': ['/usr/bin/ccls'],
     \ 'c': ['/usr/bin/ccls'],
     \ 'erlang': ['/usr/bin/erlang_ls', "--transport", "stdio"],
@@ -126,6 +128,8 @@ augroup LSP
   autocmd FileType cpp,c,python,rust call SetLSPShortcuts()
 augroup END
 
+let g:LanguageClient_settingsPath = '~/.config/nvim/settings.json'
+
 " Autocompletion and others
 let g:deoplete#enable_at_startup = 1
 " Use smartcase.
@@ -144,14 +148,15 @@ set shell=/usr/bin/fish
 nmap ; :
 
 " Coloring and looks
-let g:airline_exclude_preview=1
-let g:airline_theme='solarized'
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+colorscheme base16-default-light
 
-colorscheme gruvbox
-" set background=dark
-set background=light
 
 " Statusline formatting and warnings
+let g:airline_exclude_preview=1
 set statusline+=%#warningmsg#
 set statusline+=%*
 

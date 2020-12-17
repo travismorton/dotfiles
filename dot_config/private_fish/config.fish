@@ -6,7 +6,6 @@ fundle plugin 'danhper/fish-ssh-agent'
 # fundle plugin 'jethrokuan/z'
 # fundle plugin 'laughedelic/pisces'
 # fundle plugin 'edc/bass'
-# fundle plugin 'oh-my-fish/plugin-thefuck'
 
 fundle init
 
@@ -33,11 +32,13 @@ set -gx PATH ~/.bin $PATH
 # set -gx PATH ~/workspace/conda/bin $PATH
 # set -gx PATH ~/.gem/ruby/2.7.0/bin $PATH
 
-# start thefuck
-# thefuck --alias | source
+# Base16 Shell
+if status --is-interactive
+    set BASE16_SHELL "$HOME/.config/base16-shell/"
+    source "$BASE16_SHELL/profile_helper.fish"
+end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 eval /home/travis/workspace/conda/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
-

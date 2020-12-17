@@ -1,0 +1,8 @@
+#!/usr/bin/env fish
+set BASE16_SHELL "$HOME/.config/base16-shell/"
+source "$BASE16_SHELL/profile_helper.fish"
+{{- if eq (env "DARK") "true"}}
+base16-default-dark
+{{- else}}
+base16-default-light
+{{- end}}
