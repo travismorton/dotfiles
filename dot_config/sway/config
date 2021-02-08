@@ -81,7 +81,7 @@ input "1739:52643:CUST0001:00_06CB:CDA3_Touchpad" {
 
     # Take a screenshot of a selection and save to ~/screenshots
     bindsym $mod+Shift+s exec grim -g $(slurp) ~/Screenshots/$(date +'%Y%m%d_%Hh%Mm%Ss_grim.png')
-    
+
     # Take a screenshot of the active desktop
     bindsym $mod+Shift+a exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/Screenshots/$(date +'%Y%m%d_%Hh%Mm%Ss_grim.png')
 
@@ -210,13 +210,41 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+include colorscheme
+# Base16 colors
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
+
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     swaybar_command waybar
+
+    # More Base16 colors...
+    colors {
+    background $base00
+    separator  $base01
+    statusline $base04
+
+    # State             Border  BG      Text
+    focused_workspace   $base05 $base0D $base00
+    active_workspace    $base05 $base03 $base00
+    inactive_workspace  $base03 $base01 $base05
+    urgent_workspace    $base08 $base08 $base00
+    binding_mode        $base00 $base0A $base00
+    }
 }
+output * bg ~/.config/sway/background.jpg fill
+
+gaps inner 6
+smart_gaps on
+
 exec nm-applet --indicator --sm-disable
 exec blueman-applet
 exec redshift -O 4000

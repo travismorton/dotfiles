@@ -82,6 +82,8 @@ autocmd FileType cpp setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab
 " ... or if it's json
 autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab
+" ... or if it's terraform
+autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab
 " ... of if it's a makefile
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
@@ -182,6 +184,7 @@ set mouse=a
 
 " Double click on a word to go to definition
 nnoremap <silent> <2-LeftMouse> :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <2-RightMouse> :call LanguageClient#textDocument_references()<CR>
 
 " Experimentation: using vim-tabdrop to open definition in a different tab
 nnoremap <C-]> :call Gotodef()<CR>

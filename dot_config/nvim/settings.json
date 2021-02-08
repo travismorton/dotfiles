@@ -2,7 +2,7 @@
     "pyls": {
         "plugins": {
             "pyflakes": {
-                "enabled": false
+                "enabled": true
             },
             "flake8": {
                 "enabled": false
