@@ -68,6 +68,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 Plug 'Shougo/echodoc'
 Plug 'ipod825/vim-tabdrop'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
@@ -83,7 +84,7 @@ autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab
 " ... or if it's json
 autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab
 " ... or if it's terraform
-autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType terraform setlocal shiftwidth=2 softtabstop=2 expandtab
 " ... of if it's a makefile
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
@@ -106,6 +107,7 @@ let g:LanguageClient_serverCommands = {
     \ 'go': ['/usr/bin/gopls'],
     \ 'java': ['/usr/bin/jdtls', '-data', getcwd()],
     \ 'rust': ['/usr/bin/rls'],
+    \ 'terraform': ['/usr/bin/terraform-ls', 'serve']
     \ }
 
 " LSP shortcuts go here.
@@ -156,6 +158,9 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 colorscheme base16-default-light
 
+" Terraform formatting
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
 
 " Statusline formatting and warnings
 let g:airline_exclude_preview=1
