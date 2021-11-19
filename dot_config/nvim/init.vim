@@ -36,6 +36,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
+Plug 'mattn/vim-particle'
 " Plug 'guns/xterm-color-table.vim'
 
 " Tools
@@ -44,6 +45,8 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'psf/black'
+Plug 'Chiel92/vim-autoformat'
+Plug 'jvirtanen/vim-hcl'
 
 " Autocompletion, linting, LSP, etc.
 " LSP requirements outside of neovim:

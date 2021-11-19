@@ -31,7 +31,7 @@ set -x LC_ALL "en_US.UTF-8"
 set -gx PATH $GOPATH/bin $PATH
 set -gx PATH ~/.bin $PATH
 # set -gx PATH ~/workspace/conda/bin $PATH
-set -gx PATH ~/.gem/ruby/2.7.0/bin $PATH
+set -gx PATH ~/.gem/ruby/3.0.0/bin $PATH
 set -gx PATH $CUDA_HOME/bin $PATH
 
 
