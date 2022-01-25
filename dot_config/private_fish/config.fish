@@ -18,10 +18,13 @@ powerline-setup
 set -x CUDA_HOME /opt/cuda
 set -x EDITOR /usr/bin/nvim
 set -x MKL_ROOT /opt/intel/mkl
-# set -x VIRTUAL_ENV_DISABLE_PROMPT true
-# set -x GOPATH /home/travis/go
+# Need GOPATH for anything Go related
+set -x GOPATH /home/travis/go
+# For (among other things) Runelite
 set -x _JAVA_AWT_WM_NONREPARENTING 1
 set -x LC_ALL "en_US.UTF-8"
+# Fix double venv prompt with powerline
+set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # set LD_LIBRARY
 # needed for cudnn
